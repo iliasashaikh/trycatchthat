@@ -4,7 +4,7 @@ email: iliasashaikh@gmail.com
 description: >
   These are mostly notes to myself. Things that I have learnt, mistakes I have made, and projects that I am working on.
 baseurl: "/trycatchthat" # the subpath of your site, e.g. /blog/
-url: "http://localhost:4000" # the base hostname & protocol for your site
+url: "www.trycatchthat.com" # the base hostname & protocol for your site
 twitter_username: iliasshaikh
 github_username:  iliasashaikh
 
