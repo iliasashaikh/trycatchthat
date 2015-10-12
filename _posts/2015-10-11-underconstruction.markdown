@@ -31,4 +31,4 @@ static void Bar(ref List<int> list)
 
 {% endhighlight %}
 
-![Under construction](/assets/underconstruction.jpg)
+![Under construction]({{site.baseurl}}/assets/underconstruction.jpg)
