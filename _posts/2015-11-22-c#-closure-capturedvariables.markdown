@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Closures and captured variables in C#"
+title:  "Closures in C#"
 date:   2015-11-25 21:27:21
 categories: c# fundamentals
 ---
@@ -69,3 +69,4 @@ And now the output is different again
 
     0 1 2 3 4 5 6 7 8 9
 
+    
