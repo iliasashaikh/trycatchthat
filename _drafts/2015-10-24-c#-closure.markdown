@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "Closures in C#"
+date:   2015-10-24 21:05:44
+categories: c# fundamentals
+---
+An anonymous funtion is an expression with no name that encloses a function definition. It can be assigned to either a delegate or to an expression tree. But the vagaries of anonymous functions are for another time and blog. However here I will look at captured variables, rules around them etc.
+
+Consider this,
+{% highlight c# %}
+
+public void foo()
+{
+  Action<int> a = (i)=> Console.Write($"{i} ");
+  
+  for (int i = 0; i < 10; i++)
+  {
+    a(i);
+  }
+}
+
+{% endhighlight %}
+
+The output for this is pretty straightforward 
+
+    0 1 2 3 4 5 6 7 8 9 
+
+Now rather than outputting the variable to the console immediately, lets do something else and capture some variables 
+
+{% highlight c# %}
+
+public void foo()
+{
+  Action<int> a = (i) => Console.Write($"{i} ");
+  List<Action> actions = new List<System.Action>();
+  
+  // capture the loop variable i by the action closure we defined earlier
+  for (int i = 0; i < 10; i++)
+    actions.Add(()=>a(i));
+  
+  foreach (var action in actions)
+    action();
+}
+
+{% endhighlight %}
+
+This time round, the output turns out to be a bit unexpected 
+    10 10 10 10 10 10 10 10 10 10 
+
+Lets now slightly alter the above code to use a *__foreach__* instead of *__for__*    
+
+{% highlight  c# %}
+public void foo()
+{
+  Action<int> a = (i) => Console.Write($"{i} ");
+  List<Action> actions = new List<System.Action>();
+  
+  foreach (int i in Enumerable.Range(0,10))
+    actions.Add(()=>a(i));
+  
+  foreach (var action in actions)
+    action();
+}
+{% endhighlight %}
+
+And now the output is different again 
+
+    0 1 2 3 4 5 6 7 8 9
