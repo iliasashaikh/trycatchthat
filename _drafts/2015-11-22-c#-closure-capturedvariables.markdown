@@ -1,32 +1,68 @@
 ---
 layout: post
-title:  "Closures over loop variables"
+title:  "Closures over loop variables - draft"
 date:   2015-11-25 21:27:21
 categories: c# fundamentals
 ---
-An anonymous funtion is an expression with no name that encloses a function definition. It can be assigned to either a delegate or to an expression tree. But the vagaries of anonymous functions are for another time and blog. However here I will look at captured variables or closures as they are referred to in other languages, rules around them etc.
-
 *Definition* 
 
+Consider this code snippet, 
 
-Consider this,
+##### Basic closure {#listing1}
 {% highlight c# %}
-// Snippet #1
 public void foo()
 {
-  Action<int> a = (i)=> Console.Write($"{i} ");
-  
-  for (int i = 0; i < 10; i++)
-  {
-    a(i);
-  }
+  int i = 100;
+  Action a = () => Console.Write($"{i} ");
+  bar(a);
+}
+
+public void bar(Action a)
+{
+  a();
 }
 
 {% endhighlight %}
 
-The output for this is pretty straightforward 
 
-    0 1 2 3 4 5 6 7 8 9 
+On running this piece of code in a Console application you see -
+
+    100
+
+On first glance this is fairly intuitive and obviously the output we would expect, but hang on, how can function *bar()* get access to the local variable of *foo()*. It is, as you might image, a piece of compiler jiggery-pokery that makes this possible, but more on that later. We have just seen in this [listing](#listing1) a 'closure' in action. The wikipedia definition of closure is 
+
+> In programming languages, closures (also lexical closures or function closures) are a technique for implementing lexically scoped name binding in languages with first-class functions. Operationally, a closure is a record storing a function together with an environment a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or storage location to which the name was bound when the closure was created. A closure — unlike a plain function — allows the function to access those captured variables through the closure's reference to them, even when the function is invoked outside their scope.
+
+Wow, that's a mouthful isn't it, let try and dissect the definition by looking at some of the terms, bear with me if these are self evident, but I will expand on them anyways.
+
+- name binding - associating a symbol with an entity such as a variable to its value or address, or a symbol to an operation. Consider the following
+    {% highlight c# %}
+        // variable 'i' is bound to 100
+        int i = 100; 
+        
+        // considering AA to be a reference type, 
+        // variable 'a' is bound to the start address of the location on the heap where the bytes for the instance of 'AA' are stored
+        AA a = new AA(); 
+        
+        // variable 'act' is bound to the anonymous function 
+        Action act = ()={ Console.WriteLine ("hello")}; 
+    {% endhighlight %}
+
+- lexical scope - this is a 
+- first class functions
+- free variable
+
+In the above example, the anonymous function referenced by the delegate is a closure, since this function now 'closes' over the variable 'i' in the scope where it is declared. As a concept, it is more functional than object oriented. In can
+
+
+
+'Closure'
+
+In this example we can say that the variable 'i' has been captured by the anonymous function.
+
+Outer variable
+
+Captured outre variable
 
 Now rather than outputting the variable to the console immediately, lets do something else and capture some variables 
 

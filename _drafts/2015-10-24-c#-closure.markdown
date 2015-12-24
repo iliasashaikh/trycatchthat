@@ -4,7 +4,7 @@ title:  "Closures and captured variables in C#"
 date:   2015-11-25 21:27:21
 categories: c# fundamentals
 ---
-An anonymous funtion is an expression with no name that encloses a function definition. It can be assigned to either a delegate or to an expression tree. But the vagaries of anonymous functions are for another time and blog. However here I will look at captured variables, rules around them etc.
+An anonymous funtion is an expression with no name that encloses a function definition. It can be assigned to either a delegate or to an expression tree. But the vagaries of anonymous functions are for another time and blog. However here I will look at captured variables or closures, rules around them etc.
 
 Consider this,
 {% highlight c# %}
