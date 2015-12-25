@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Closures over loop variables - draft"
+title:  "Closures in CSharp"
 date:   2015-11-25 21:27:21
 categories: c# fundamentals
 ---
@@ -48,8 +48,10 @@ Wow, that's a mouthful isn't it, let try and dissect the definition by looking a
         Action act = ()={ Console.WriteLine ("hello")}; 
     {% endhighlight %}
 
-- lexical scope - this is a 
-- first class functions
+- lexical scope - this is a region of statements in the your code where a variable is visible. A variable is visible in a statement if it can be referenced from the statement.
+- 
+- first class functions - a programming language is said to have first class functions when functions can be treated as any other data. In c# first class functions are supported using anonymous methods and lambdas.
+- 
 - free variable
 
 In the above example, the anonymous function referenced by the delegate is a closure, since this function now 'closes' over the variable 'i' in the scope where it is declared. As a concept, it is more functional than object oriented. In can
