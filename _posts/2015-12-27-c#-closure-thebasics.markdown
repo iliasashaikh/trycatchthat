@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Closures in CSharp - The Basics"
+title:  "Closures in c# - The Basics"
 date:   2015-12-27 11:08:04
 categories: c# fundamentals
 ---
