@@ -10,6 +10,3 @@ github_username:  iliasashaikh
 
 # Build settings
 markdown: kramdown
-
-gems:
-  - jekyll-redirect-from
