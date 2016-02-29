@@ -8,11 +8,18 @@ categories: c# fundamentals
 Consider this code snippet, 
 
 {% highlight c# %}
-public void foo()
+
+void Main()
+{
+  var a = foo();
+  bar(a);
+}
+
+public Action foo()
 {
   int i = 100;
   Action a = () => Console.Write($"{i} ");
-  bar(a);
+  return a;
 }
 
 public void bar(Action a)
@@ -27,7 +34,7 @@ On running this piece of code in a console application you see -
 
     100
 
-On first glance this is fairly intuitive and obviously the output we would expect, but hang on, how can function '__*bar()*__' have access to the local 'i' variable of __*foo()*__. 
+On first glance this is fairly intuitive and obviously the output we would expect, but hang on, how can function '__*bar()*__' have access to the local 'i' variable of __*foo()*__, after __*foo()*__ has finished and in theory popped its variables off the stack.
 
 We have just seen a 'closure' in action.
 
