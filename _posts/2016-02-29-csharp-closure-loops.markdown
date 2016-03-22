@@ -2,10 +2,10 @@
 layout: post
 title:  "Closures in c# - Loops"
 date:   2016-02-29 06:55:55
-categories: c# fundamentals
+categories: csharp fundamentals
 ---
 
-In the [last post]({% post_url 2015-12-27-c#-closure-thebasics %}) I looked at the fundamentals of closures. In this post I will look at some of the things to watch for when using closures. 
+In the [last post]({% post_url 2015-12-27-csharp-closure-thebasics %}) I looked at the fundamentals of closures. In this post I will look at some of the things to watch for when using closures. 
 
 One of the key takeaway from the last post was the fact that closures captures variables and not values. This has at least one counter intuitive affect on loops.
 
