@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Build Automation"
+title:  "Build Automation for .NET - Basics"
 date:   2016-03-20 08:39:56
 categories: fsharp FAKE
 ---
 
-This is going to be the first in a series of posts about how to use FAKE for builds. I currently use Nant, and its served me well for a fair few years, and arguably I can do all I need to if I continue with Nant. It has a load of extensions and heck, with the 'script' tag in Nant, I can use C# for a fair few tasks without ever having to run the trouble of creating my own extensions.
+This is going to be the first in a series of posts about how to use [FAKE](http://fsharp.github.io/FAKE/ "FAKE") for builds. I currently use Nant, and its served me well for a fair few years, and arguably I can do all I need to if I continue with Nant. It has a load of extensions and heck, with the 'script' tag in Nant, I can use C# for a fair few tasks without ever having to run the trouble of creating my own extensions.
 
-And there in lies the rub - Nant (and msbuild) tasks are just a means of calling into functions written in a programming language. With build systems based on a first class programming lanuguage, we can cut the xml middle man out. The alternatives that I have seen so far in the .NET space are [PSake](https://github.com/psake/psake "PSake") and possibly [RAKE](https://github.com/ruby/rake) is I am feeling adventurous. However, I have wanted to learn F# for a while now and maybe I can pick up some functional goodness from this exercise. Plus, I am hoping that I will be able to edit and debug Fake scripts from Visual Studio. 
+And there in lies the rub - Nant (and msbuild) tasks are just a means of calling into functions written in a programming language. With build systems based on a first class programming lanuguage, we can cut the xml middle man out. The alternatives that I have seen so far in the .NET space are [psake](https://github.com/psake/psake "psake"), possibly [rake](https://github.com/ruby/rake) and of course [FAKE](http://fsharp.github.io/FAKE/ "FAKE"). I have wanted to learn F# for a while now with all the functional goodness that it comes with. So, I plumped for FAKE. Plus, I am hoping that I will be able to edit and debug Fake scripts from Visual Studio. 
 
 In this first post, I want to first look at some basic concepts underlying build automation.
 
