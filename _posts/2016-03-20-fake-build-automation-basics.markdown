@@ -2,7 +2,7 @@
 layout: post
 title:  "Build Automation for .NET - Basics"
 date:   2016-03-20 08:39:56
-categories: fsharp FAKE
+categories: fsharp FAKE build
 ---
 
 This is going to be the first in a series of posts about how to use [FAKE](http://fsharp.github.io/FAKE/ "FAKE") for builds. I currently use Nant, and its served me well for a fair few years, and arguably I can do all I need to if I continue with Nant. It has a load of extensions and heck, with the 'script' tag in Nant, I can use C# for a fair few tasks without ever having to run the trouble of creating my own extensions.
