@@ -10,3 +10,4 @@ github_username:  iliasashaikh
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
