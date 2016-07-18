@@ -1,0 +1,59 @@
+c# - evolution
+
+I wanted to make this talk an exposition on the evolution of C#. If we know where we came from, its easier to see where the language is going. So, lets look at the evolution of C# over time.
+
+# The history
+  
+## C# 1 - 2002
+  
+* Anders Helsberg (chief architect, previously worked on Turbo Pascal, Delphi, J++, C# and now Typescript)
+* in its first incarnation was heavily inspired by Java, but even back in the day had features that Java didnt, things like properties, events as 1st class language constructs, delegates, foreach etc.
+* _Funfact_ - c# 1.0 pretty much introduced all the keywords in the language and there have not been any more since then.
+
+## C# 2 - 2005 [.net 2]
+
+* Set c# as a multi paradigm language with influences from functional programming
+* Introduced Generics
+* Nullable types
+* anoymous methods
+* Iterators with the yield keyword 
+* Partial types
+* Static classes
+etc.
+
+## C# 3 - 2007 [.net 3.5]
+* Auto properties
+* 'var'
+* Anonymous types
+* Lambda expressions
+* Expression trees
+* Extension methods
+* Linq 
+
+## C# 4 - 2010 [.net 4]
+* Optional parameters and named arguments
+* Dynamic typing
+
+## C# 5 - 2012 [.net 4.5]
+* aysnc await
+* CallerInfo
+
+## C# 6
+
+###Autoprops
+
+###Expression bodied members
+
+###Nulls
+
+###Nameof
+
+###Static
+
+###String interpolation
+
+###Collection index initializers
+
+###Exception filters
+
+###
